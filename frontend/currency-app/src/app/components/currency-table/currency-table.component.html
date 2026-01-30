@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Kursy walut</h2>
+
+  <div>
+    <button (click)="fetchData()">Pobierz kursy z NBP</button>
+  </div>
+
+  <div>
+    <label>Filtruj po dacie:</label>
+    <input type="date" [(ngModel)]="selectedDate" />
+    <button (click)="loadByDate()">Szukaj</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Waluta</th>
+        <th>Kurs</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rate of currencies">
+        <td>{{ rate.currency }}</td>
+        <td>{{ rate.rate }}</td>
+        <td>{{ rate.date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
