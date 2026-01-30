@@ -1,0 +1,40 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    container_name: currencies_backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - .:/backend/code
+    environment:
+      - DEBUG=1
+
+  frontend:
+    build:
+      context: ./frontend/currency-app
+    container_name: currencies_frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:15
+    container_name: currencies_database
+    environment:
+      POSTGRES_DB: currencydb
+      POSTGRES_USER: currencyuser
+      POSTGRES_PASSWORD: currencypass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_data:
