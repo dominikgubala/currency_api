@@ -1,0 +1,89 @@
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  margin-bottom: 24px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+div {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+label {
+  font-weight: 600;
+  color: #34495e;
+}
+
+input[type='date'] {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3498db;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+
+  &:hover {
+    background-color: #2980b9;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+
+thead {
+  background-color: #f4f6f8;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  text-align: left;
+}
+
+th {
+  font-weight: 700;
+  color: #2c3e50;
+  border-bottom: 2px solid #ddd;
+}
+
+tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: #f9fbfd;
+  }
+}
+
+td {
+  color: #34495e;
+}
